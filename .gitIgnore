@@ -1,0 +1,45 @@
+# Python bytecode and virtual environment
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.log
+*.tmp
+.DS_Store
+
+# Jupyter notebooks (if any)
+.ipynb_checkpoints/
+
+# Virtual env
+env/
+venv/
+.venv/
+
+# IDE/project configs
+.vscode/
+.idea/
+
+# OS-specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# PyMuPDF or PDF processing temps
+*.xhtml
+*.pdf_cache/
+
+# Dataset folders if large
+docs/
+downloads/
+
+# Environment variables or credentials (not present here but good practice)
+.env
+.env.*
+
+# Pip .egg files and wheels
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl

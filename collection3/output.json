@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "input_documents": [
+      "Breakfast Ideas.pdf",
+      "Dinner Ideas - Mains_1.pdf",
+      "Dinner Ideas - Mains_2.pdf",
+      "Dinner Ideas - Mains_3.pdf",
+      "Dinner Ideas - Sides_1.pdf",
+      "Dinner Ideas - Sides_2.pdf",
+      "Dinner Ideas - Sides_3.pdf",
+      "Dinner Ideas - Sides_4.pdf",
+      "Lunch Ideas.pdf"
+    ],
+    "persona": "Food Contractor",
+    "job_to_be_done": "Prepare a vegetarian buffet-style dinner menu for a corporate gathering, including gluten-free items.",
+    "processing_timestamp": "2025-07-23T22:48:34.649179"
+  },
+  "extracted_sections": [
+    {
+      "document": "Dinner Ideas - Sides_3.pdf",
+      "section_title": "Naan",
+      "importance_rank": 1,
+      "page_number": 13
+    },
+    {
+      "document": "Dinner Ideas - Mains_2.pdf",
+      "section_title": "Roast Chicken",
+      "importance_rank": 2,
+      "page_number": 1
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "section_title": "Peking Duck",
+      "importance_rank": 3,
+      "page_number": 1
+    }
+  ],
+  "subsection_analysis": [
+    {
+      "document": "Dinner Ideas - Sides_3.pdf",
+      "refined_text": "o Blend mashed eggplant, tahini, lemon juice, minced garlic, and salt in a food \nprocessor. \no Slowly add olive oil while blending until smooth. \no Serve with a drizzle of olive oil.",
+      "page_number": 13
+    },
+    {
+      "document": "Dinner Ideas - Mains_2.pdf",
+      "refined_text": " \n1 teaspoon thyme \n \n1 teaspoon rosemary \n \n1/4 cup olive oil \n \nSalt and pepper to taste \nInstructions: \n \nPreheat oven to 375°F (190°C). \n \nIn a large baking dish, layer diced eggplant, zucchini, bell pepper, onion, and tomatoes. \n \nIn a bowl, mix minced garlic, olive oil, thyme, rosemary, salt, and pepper.",
+      "page_number": 1
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "refined_text": " \nReturn chicken to the skillet and cook until heated through. \n \nServe warm. \n \n \n \nPeking Duck \nIngredients: \n \n1 whole duck \n \n1/4 cup soy sauce \n \n1/4 cup honey \n \n2 tablespoons hoisin sauce \n \n2 tablespoons rice vinegar \n \n2 cloves garlic, minced \n \n1 teaspoon five-spice powder \n \n1 teaspoon grated ginger \n \n1/4 cup green onions, sliced \n \nMandarin pancakes for serving \nInstructions: \n \nPreheat oven to 375°F (190°C).",
+      "page_number": 1
+    }
+  ]
+}
