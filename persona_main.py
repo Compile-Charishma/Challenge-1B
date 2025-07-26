@@ -166,9 +166,11 @@ def process_collection(collection_path):
             "importance_rank": i + 1,
             "page_number": section["page"]
         })
+        # Remove all newline characters from refined_text
+        refined_text_clean = re.sub(r'[\r\n]+', ' ', section["content"][:800])
         output["subsection_analysis"].append({
             "document": section["document"],
-            "refined_text": section["content"][:800],
+            "refined_text": refined_text_clean,
             "page_number": section["page"]
         })
 

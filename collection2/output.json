@@ -19,7 +19,7 @@
     ],
     "persona": "HR professional",
     "job_to_be_done": "Create and manage fillable forms for onboarding and compliance.",
-    "processing_timestamp": "2025-07-23T22:48:32.462632"
+    "processing_timestamp": "2025-07-26T12:18:24.717746"
   },
   "extracted_sections": [
     {
@@ -50,22 +50,22 @@
   "subsection_analysis": [
     {
       "document": "Learn Acrobat - Fill and Sign.pdf",
-      "refined_text": "Fill in PDF Forms \n \nIs the form fillable? \nNot all forms are fillable. Sometimes form creators don’t convert their PDFs to \ninteractive fillable forms.",
+      "refined_text": "Fill in PDF Forms    Is the form fillable?  Not all forms are fillable. Sometimes form creators don’t convert their PDFs to  interactive fillable forms.",
       "page_number": 8
     },
     {
       "document": "The Ultimate PDF Sharing Checklist.pdf",
-      "refined_text": "• Have you sent the email or shared the link through your \nchosen platform? \n•  Follow Up \n• Are you tracking who has accessed the document and \nfollowing up as needed? \nProfessional Tip: Clear Instructions \nEnsure your email instructions are clear and concise to avoid any \nconfusion for your recipients.",
+      "refined_text": "• Have you sent the email or shared the link through your  chosen platform?  •  Follow Up  • Are you tracking who has accessed the document and  following up as needed?  Professional Tip: Clear Instructions  Ensure your email instructions are clear and concise to avoid any  confusion for your recipients.",
       "page_number": 2
     },
     {
       "document": "The Ultimate PDF Sharing Checklist.pdf",
-      "refined_text": "• Did you enter the email addresses of clients, agents, and other \nstakeholders? \n•  Customize Your Message \n• Have you added a personal touch to the subject and message \nfields, highlighting key property details? \n•  Create and Share the Link \n• Did you generate a shareable link and copy it for distribution?",
+      "refined_text": "• Did you enter the email addresses of clients, agents, and other  stakeholders?  •  Customize Your Message  • Have you added a personal touch to the subject and message  fields, highlighting key property details?  •  Create and Share the Link  • Did you generate a shareable link and copy it for distribution?",
       "page_number": 3
     },
     {
       "document": "Learn Acrobat - Generative AI_2.pdf",
-      "refined_text": "License deployment \nYou can manage the deployment of Acrobat AI Assistant through the Adobe Admin Console. \nAs an admin, you must add users to the Admin Console using one of the methods described \nin Adobe Admin Console users. You can choose to either select the users to assign or create \nproduct profiles and assign users to the profiles.",
+      "refined_text": "License deployment  You can manage the deployment of Acrobat AI Assistant through the Adobe Admin Console.  As an admin, you must add users to the Admin Console using one of the methods described  in Adobe Admin Console users. You can choose to either select the users to assign or create  product profiles and assign users to the profiles.",
       "page_number": 18
     }
   ]
