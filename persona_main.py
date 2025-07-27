@@ -51,14 +51,35 @@ def rank_sections(sections, query, top_k=5, doc_limit=2):
     filtered = []
     seen_titles = set()
 
+    # Only keep sections with non-blank, non-generic content
     for s in sections:
         title_lower = s["section_title"].strip().lower()
-        if title_lower in GENERIC_TITLES or not s["content"].strip():
+        content_clean = s["content"].strip()
+        if title_lower in GENERIC_TITLES or not content_clean:
             continue
         if title_lower in seen_titles:
             continue
         seen_titles.add(title_lower)
         filtered.append(s)
+
+    # If not enough, fill with additional non-blank sections from PDFs
+    if len(filtered) < top_k:
+        extra_sections = [s for s in sections if s["section_title"].strip().lower() not in GENERIC_TITLES and s["content"].strip() and s not in filtered]
+        for s in extra_sections:
+            filtered.append(s)
+            if len(filtered) >= top_k:
+                break
+
+    # If still not enough, fill with any remaining sections (last resort)
+    if len(filtered) < top_k:
+        for s in sections:
+            if s not in filtered:
+                filtered.append(s)
+            if len(filtered) >= top_k:
+                break
+
+    # Truncate to exactly top_k
+    filtered = filtered[:top_k]
 
     if not filtered:
         print("[WARN] No usable sections after filtering.")
@@ -79,18 +100,8 @@ def rank_sections(sections, query, top_k=5, doc_limit=2):
 
     scored_sections.sort(key=lambda x: x[1], reverse=True)
 
-    doc_counts = defaultdict(int)
-    selected = []
-
-    for sec, sc in scored_sections:
-        doc = sec["document"]
-        if doc_counts[doc] < doc_limit:
-            selected.append((sec, sc))
-            doc_counts[doc] += 1
-        if len(selected) >= top_k:
-            break
-
-    return selected
+    # Always return exactly top_k sections
+    return scored_sections[:top_k]
 
 def process_collection(collection_path):
     print(f"\n[INFO] 📁 Processing collection: {collection_path}")
@@ -138,15 +149,44 @@ def process_collection(collection_path):
 
     ranked = rank_sections(all_sections, query, top_k=5, doc_limit=2)
 
-    seen_texts = set()
+    # Always select exactly 5 unique, non-blank sections with unique refined_text
     unique_sections = []
-
+    seen_texts = set()
     for section, _ in ranked:
-        content_preview = section["content"][:300].strip()
-        if content_preview in seen_texts:
+        refined_text_clean = re.sub(r'[\r\n]+', ' ', section["content"][:800]).strip()
+        if not refined_text_clean:
             continue
-        seen_texts.add(content_preview)
+        if refined_text_clean in seen_texts:
+            continue
+        seen_texts.add(refined_text_clean)
         unique_sections.append(section)
+        if len(unique_sections) >= 5:
+            break
+
+    # If less than 5, fill with additional unique non-blank sections from all_sections
+    if len(unique_sections) < 5:
+        for s in all_sections:
+            refined_text_clean = re.sub(r'[\r\n]+', ' ', s["content"][:800]).strip()
+            if not refined_text_clean or s in unique_sections or refined_text_clean in seen_texts:
+                continue
+            seen_texts.add(refined_text_clean)
+            unique_sections.append(s)
+            if len(unique_sections) >= 5:
+                break
+
+    # If still less than 5, fill with any remaining unique sections
+    if len(unique_sections) < 5:
+        for s in all_sections:
+            refined_text_clean = re.sub(r'[\r\n]+', ' ', s["content"][:800]).strip()
+            if s in unique_sections or refined_text_clean in seen_texts:
+                continue
+            seen_texts.add(refined_text_clean)
+            unique_sections.append(s)
+            if len(unique_sections) >= 5:
+                break
+
+    # Truncate to exactly 5
+    unique_sections = unique_sections[:5]
 
     output = {
         "metadata": {
@@ -159,6 +199,8 @@ def process_collection(collection_path):
         "subsection_analysis": []
     }
 
+    # Use the same unique logic for subsection_analysis
+    used_refined_texts = set()
     for i, section in enumerate(unique_sections):
         output["extracted_sections"].append({
             "document": section["document"],
@@ -166,13 +208,33 @@ def process_collection(collection_path):
             "importance_rank": i + 1,
             "page_number": section["page"]
         })
-        # Remove all newline characters from refined_text
-        refined_text_clean = re.sub(r'[\r\n]+', ' ', section["content"][:800])
+        refined_text_clean = re.sub(r'[\r\n]+', ' ', section["content"][:800]).strip()
+        if refined_text_clean in used_refined_texts:
+            continue
+        used_refined_texts.add(refined_text_clean)
         output["subsection_analysis"].append({
             "document": section["document"],
             "refined_text": refined_text_clean,
             "page_number": section["page"]
         })
+
+    # If less than 5 unique subsection_analysis, fill with additional unique content
+    if len(output["subsection_analysis"]) < 5:
+        for s in all_sections:
+            refined_text_clean = re.sub(r'[\r\n]+', ' ', s["content"][:800]).strip()
+            if not refined_text_clean or refined_text_clean in used_refined_texts:
+                continue
+            used_refined_texts.add(refined_text_clean)
+            output["subsection_analysis"].append({
+                "document": s["document"],
+                "refined_text": refined_text_clean,
+                "page_number": s["page"]
+            })
+            if len(output["subsection_analysis"]) >= 5:
+                break
+
+    # Truncate to exactly 5
+    output["subsection_analysis"] = output["subsection_analysis"][:5]
 
     with open(output_path, 'w', encoding='utf-8') as f_out:
         json.dump(output, f_out, indent=2, ensure_ascii=False)

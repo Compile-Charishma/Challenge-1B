@@ -11,65 +11,65 @@
     ],
     "persona": "Travel Planner",
     "job_to_be_done": "Plan a trip of 4 days for a group of 10 college friends.",
-    "processing_timestamp": "2025-07-26T12:18:20.096542"
+    "processing_timestamp": "2025-07-27T15:53:36.049400"
   },
   "extracted_sections": [
     {
-      "document": "South of France - Tips and Tricks.pdf",
-      "section_title": "Planning, and Exploring",
+      "document": "South of France - Cities.pdf",
+      "section_title": "Travel Tips",
       "importance_rank": 1,
-      "page_number": 1
-    },
-    {
-      "document": "South of France - History.pdf",
-      "section_title": "A Historical Journey Through the South of France",
-      "importance_rank": 2,
-      "page_number": 1
-    },
-    {
-      "document": "South of France - Tips and Tricks.pdf",
-      "section_title": "Essentials",
-      "importance_rank": 3,
-      "page_number": 6
-    },
-    {
-      "document": "South of France - Cuisine.pdf",
-      "section_title": "A Culinary Journey Through the South of France",
-      "importance_rank": 4,
-      "page_number": 1
+      "page_number": 2
     },
     {
       "document": "South of France - Cities.pdf",
-      "section_title": "Travel Tips",
+      "section_title": "Marseille: The Oldest City in France",
+      "importance_rank": 2,
+      "page_number": 3
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Nice: The Jewel of the French Riviera",
+      "importance_rank": 3,
+      "page_number": 5
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Avignon: The City of Popes",
+      "importance_rank": 4,
+      "page_number": 7
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Aix-en-Provence: A City of Art and Culture",
       "importance_rank": 5,
-      "page_number": 2
+      "page_number": 8
     }
   ],
   "subsection_analysis": [
     {
-      "document": "South of France - Tips and Tricks.pdf",
-      "refined_text": "The Ultimate South of France Travel Companion: Your Comprehensive Guide to Packing,  Planning, and Exploring  Introduction  Planning a trip to the South of France requires thoughtful preparation to ensure a  comfortable and enjoyable experience. This guide covers everything from packing essentials  to travel tips, catering to all seasons and various activities. Whether you're traveling solo, with  kids, or in a group, this guide will help you make the most of your trip.",
-      "page_number": 1
-    },
-    {
-      "document": "South of France - History.pdf",
-      "refined_text": "A Historical Journey Through the South of France  Introduction  The South of France, renowned for its picturesque landscapes, charming villages, and  stunning coastline, is also steeped in history. From ancient Roman ruins to medieval  fortresses and Renaissance architecture, this region oﬀers a fascinating glimpse into the past.  This guide will take you through the histories of major cities, famous historical sites, and other  points of interest to help you plan an enriching and unforgettable trip.",
-      "page_number": 1
-    },
-    {
-      "document": "South of France - Tips and Tricks.pdf",
-      "refined_text": "Packing for Kids  Clothing  •  Comfortable Wear: T-shirts, shorts, pants, dresses, pajamas, and underwear.  •  Layering: Depending on the season, pack sweaters, jackets, and hats.  •  Swimwear: Swimsuits and cover-ups for beach or pool days.",
-      "page_number": 6
-    },
-    {
-      "document": "South of France - Cuisine.pdf",
-      "refined_text": "A Culinary Journey Through the South of France  Introduction  The South of France, known for its stunning landscapes and charming villages, is also a  paradise for food lovers. The region's cuisine is a delightful blend of Mediterranean flavors,  fresh ingredients, and traditional recipes passed down through generations. This guide will  take you through the diﬀerent types of food, famous dishes, must-visit restaurants, renowned  wine regions, and the types of wines they produce to help you plan an unforgettable culinary  adventure.",
-      "page_number": 1
-    },
-    {
       "document": "South of France - Cities.pdf",
       "refined_text": "Overview of the Region  The South of France, or \"Le Midi,\" encompasses the regions of Provence-Alpes-Côte d'Azur,  Occitanie, and parts of Nouvelle-Aquitaine. This area is renowned for its diverse landscapes,  from the sun-drenched beaches of the French Riviera to the rolling vineyards of Provence and  the rugged Pyrenees mountains. The Mediterranean climate ensures warm summers and  mild winters, making it a year-round destination.",
       "page_number": 2
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "refined_text": "Marseille: The Oldest City in France  History  Marseille, founded by Greek sailors around 600 BC, is the oldest city in France. Its strategic  location on the Mediterranean coast made it a vital trading port throughout history. The city's  rich cultural heritage is reflected in its diverse architecture and vibrant atmosphere.",
+      "page_number": 3
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "refined_text": "Nice: The Jewel of the French Riviera  History  Nice, located on the French Riviera, has been a popular destination for centuries. Its history  dates back to the ancient Greeks, who founded the city around 350 BC. Nice later became a  Roman colony and has since evolved into a glamorous resort town.",
+      "page_number": 5
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "refined_text": "Avignon: The City of Popes  History  Avignon, located on the banks of the Rhône River, is best known for its role as the seat of the  papacy in the 14th century. The city was home to seven popes during this period, leaving a  lasting legacy of impressive architecture and cultural heritage. Avignon's history dates back to  Roman times, and it has been a significant religious and cultural center for centuries.",
+      "page_number": 7
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "refined_text": "Aix-en-Provence: A City of Art and Culture  History  Aix-en-Provence, founded by the Romans in 123 BC, is known for its elegant architecture,  vibrant cultural scene, and association with the painter Paul Cézanne. The city's rich history is  reflected in its beautiful buildings and lively atmosphere. Aix-en-Provence has been a center  of art and learning for centuries, attracting artists, writers, and scholars.",
+      "page_number": 8
     }
   ]
 }
